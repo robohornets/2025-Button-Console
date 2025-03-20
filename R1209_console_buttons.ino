@@ -144,50 +144,66 @@ void loop() {
     bool poseK = readConsole(CONSOLE_BUTTON_K);
     bool poseL = readConsole(CONSOLE_BUTTON_L);
 
-    if (poseA) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.1), getJoystickValue(0.1));
-    }
-    else if (poseB) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.2), getJoystickValue(0.2));
-    }
-    else if (poseC) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.3), getJoystickValue(0.3));
-    }
-    else if (poseD) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.4), getJoystickValue(0.4));
-    }
-    else if (poseE) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.5), getJoystickValue(0.5));
-    }
-    else if (poseF) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.6), getJoystickValue(0.6));
-    }
-    else if (poseG) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.7), getJoystickValue(0.7));
-    }
-    else if (poseH) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.8), getJoystickValue(0.8));
-    }
-    else if (poseI) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(0.9), getJoystickValue(0.9));
-    }
-    else if (poseJ) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(-0.1), getJoystickValue(-0.9));
-    }
-    else if (poseK) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(-0.2), getJoystickValue(-0.8));
-    }
-    else if (poseL) {
-      XInput.setJoystick(JOY_LEFT, getJoystickValue(-0.3), getJoystickValue(-0.7));
-    }
-    else {
-      XInput.setJoystick(JOY_LEFT, 0, 0);
-    }
+    // if (poseA) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.1), getJoystickValue(0.1));
+    //   //XInput.setButton(BUTTON_X, level1);
+    // }
+    // else if (poseB) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.2), getJoystickValue(0.2));
+    // }
+    // else if (poseC) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.3), getJoystickValue(0.3));
+    // }
+    // else if (poseD) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.4), getJoystickValue(0.4));
+    // }
+    // else if (poseE) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.5), getJoystickValue(0.5));
+    // }
+    // else if (poseF) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.6), getJoystickValue(0.6));
+    // }
+    // else if (poseG) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.7), getJoystickValue(0.7));
+    // }
+    // else if (poseH) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.8), getJoystickValue(0.8));
+    // }
+    // else if (poseI) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(0.9), getJoystickValue(0.9));
+    // }
+    // else if (poseJ) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(-0.1), getJoystickValue(-0.9));
+    // }
+    // else if (poseK) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(-0.2), getJoystickValue(-0.8));
+    // }
+    // else if (poseL) {
+    //   XInput.setJoystick(JOY_LEFT, getJoystickValue(-0.3), getJoystickValue(-0.7));
+    // }
+    // else {
+    //   XInput.setJoystick(JOY_LEFT, 0, 0);
+    // }
 
     bool level1 = readConsole(CONSOLE_BUTTON_LEVEL_1);
     bool level2 = readConsole(CONSOLE_BUTTON_LEVEL_2);
     bool level3 = readConsole(CONSOLE_BUTTON_LEVEL_3);
     bool level4 = readConsole(CONSOLE_BUTTON_LEVEL_4);
+
+// climb
+    XInput.setButton(TRIGGER_LEFT, poseA);
+    XInput.setButton(TRIGGER_RIGHT, poseB);
+
+// coral
+    XInput.setButton(BUTTON_A, poseD);
+    XInput.setButton(BUTTON_B, poseE);
+
+// algae
+    XInput.setButton(BUTTON_LB, poseJ);
+    XInput.setButton(BUTTON_RB, poseK);
+
+    // disable camera
+    XInput.setButton(BUTTON_X, poseH);
 
     XInput.setButton(DPAD_DOWN, level1);
     XInput.setButton(DPAD_LEFT, level2);
