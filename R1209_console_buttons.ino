@@ -197,6 +197,8 @@ void loop() {
 // coral
     XInput.setButton(BUTTON_A, poseD);
     XInput.setButton(BUTTON_B, poseE);
+    XInput.setButton(BUTTON_Y, poseF);
+
 
 // algae
     XInput.setButton(BUTTON_LB, poseJ);
